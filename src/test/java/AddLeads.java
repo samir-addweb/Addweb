@@ -3,24 +3,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-    public class Test1 {
-        public static void main(String[] args) throws InterruptedException {
+public class AddLeads {
 
+        public static void main(String[] args) throws InterruptedException {
             // Set the path to the ChromeDriver executable
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\Addweb\\Drivers\\chromedriver.exe");
-
+            // Initializing ChromeDriver
             WebDriver driver = new ChromeDriver();
-
+            // Opening the URL in the browser
             driver.get("https://ttstage.addwebprojects.com/");
-
+            // Maximizing the browser window
             driver.manage().window().maximize();
+//            ListClick.click();
 
             driver.findElement(By.id("email")).sendKeys("saurabhdhariwal.com@gmail.com");
-
             Thread.sleep(2000);
             driver.findElement(By.cssSelector("input[name='password']")).sendKeys("addweb123");
 
             WebElement checkbox = driver.findElement(By.id("checkbox-signup"));
+
             if (!checkbox.isSelected()) {
                 checkbox.click();
             }
